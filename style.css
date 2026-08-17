@@ -1302,3 +1302,40 @@ h2 {
 
     margin-left: 5px;
 }
+/* =========================
+   FIX FAMILY MEMORY ON MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .memory {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 30px !important;
+    }
+
+    .memory-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .memory-image img {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+        object-fit: cover;
+    }
+
+    .memory-text {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .memory-text h3 {
+        font-size: 42px;
+        line-height: 1.05;
+    }
+
+}
