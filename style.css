@@ -1,0 +1,1304 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f1ebe3;
+    color: #302a25;
+}
+
+
+/* =========================
+   OPENING
+========================= */
+
+.opening {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fffaf3 0%,
+            #f1ebe3 50%,
+            #ded3c5 100%
+        );
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+.opening.hide {
+    opacity: 0;
+
+    transform: scale(1.05);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   OPENING CONTENT
+========================= */
+
+.opening-content {
+    max-width: 700px;
+
+    animation: fadeIn 1.5s ease;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.small-text {
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #8c755d;
+
+    margin-bottom: 25px;
+}
+
+
+h1 {
+    font-size: clamp(60px, 11vw, 110px);
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+
+.date {
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    letter-spacing: 6px;
+
+    color: #9b7e5b;
+
+    margin-bottom: 35px;
+}
+
+
+.intro {
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #655950;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+#openButton {
+    border: none;
+
+    padding: 15px 32px;
+
+    border-radius: 50px;
+
+    background: #302a25;
+
+    color: white;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+#openButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   BIRTHDAY PAGE
+========================= */
+
+.birthday-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    background: #f1ebe3;
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+
+    pointer-events: none;
+}
+
+
+.birthday-page.show {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+.birthday-content {
+    width: 100%;
+
+    max-width: 850px;
+}
+
+
+/* =========================
+   SECTION LABEL
+========================= */
+
+.section-label {
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #9b7e5b;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h2 {
+    font-size: clamp(50px, 8vw, 85px);
+
+    font-weight: normal;
+
+    line-height: 1.05;
+
+    margin-bottom: 55px;
+}
+
+
+/* =========================
+   FATHER PHOTO
+========================= */
+
+.father-photo {
+    width: min(500px, 90vw);
+
+    margin: 0 auto 55px;
+
+    position: relative;
+}
+
+
+.father-photo::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -12px;
+
+    border: 1px solid #b49a7b;
+
+    z-index: 0;
+}
+
+
+.father-photo img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    position: relative;
+
+    z-index: 1;
+
+    filter: saturate(0.85);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    max-width: 650px;
+
+    margin: auto;
+}
+
+
+.message p {
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #62564d;
+
+    margin-bottom: 25px;
+}
+
+
+.message .highlight {
+    font-size: 23px;
+
+    color: #302a25;
+
+    margin-top: 45px;
+}
+
+
+/* =========================
+   THE MAN BEHIND OUR FAMILY
+========================= */
+
+.father-section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 120px 30px;
+
+    background: #302a25;
+
+    color: #f1ebe3;
+
+    opacity: 0;
+
+    transform: translateY(60px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+
+.father-section.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.father-section-content {
+    width: 100%;
+
+    max-width: 1100px;
+}
+
+
+/* Label */
+
+.father-section .section-label {
+    color: #b49a7b;
+
+    margin-bottom: 25px;
+}
+
+
+/* Title */
+
+.father-section h2 {
+    font-size: clamp(55px, 8vw, 95px);
+
+    line-height: 1;
+
+    margin-bottom: 70px;
+
+    color: #f1ebe3;
+}
+
+
+/* Story Layout */
+
+.father-story {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+/* Story Photo */
+
+.story-photo {
+    width: 100%;
+
+    max-width: 480px;
+
+    position: relative;
+}
+
+
+.story-photo::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -12px;
+
+    border: 1px solid #8c755d;
+}
+
+
+.story-photo img {
+    width: 100%;
+
+    display: block;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    position: relative;
+
+    z-index: 1;
+
+    filter: grayscale(20%);
+}
+
+
+/* Story Text */
+
+.story-text {
+    max-width: 500px;
+}
+
+
+.story-text p {
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #cfc5bb;
+
+    margin-bottom: 25px;
+}
+
+
+.story-text .story-highlight {
+    font-size: 24px;
+
+    color: #f1ebe3;
+
+    margin-top: 40px;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+/* =========================
+   LETTER ANIMATION
+========================= */
+
+.letter-section .letter-container {
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+
+.letter-section.show .letter-container {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    /* Opening */
+
+    .opening {
+        padding: 25px 20px;
+    }
+
+
+    .opening-content {
+        width: 100%;
+    }
+
+
+    .small-text {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+        line-height: 1.6;
+
+        margin-bottom: 20px;
+    }
+
+
+    h1 {
+        font-size: 58px;
+
+        line-height: 1;
+    }
+
+
+    .date {
+        font-size: 12px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .intro {
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        margin-bottom: 35px;
+    }
+
+
+    #openButton {
+        padding: 14px 27px;
+
+        font-size: 13px;
+    }
+
+
+    /* Birthday Page */
+
+    .birthday-page {
+        padding: 80px 20px;
+    }
+
+
+    .section-label {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 18px;
+    }
+
+
+    h2 {
+        font-size: 52px;
+
+        line-height: 1;
+
+        margin-bottom: 45px;
+    }
+
+
+    /* Father Photo */
+
+    .father-photo {
+        width: calc(100% - 20px);
+
+        margin-bottom: 45px;
+    }
+
+
+    .father-photo::before {
+        inset: -8px;
+    }
+
+
+    /* Message */
+
+    .message {
+        width: 100%;
+    }
+
+
+    .message p {
+        font-size: 16px;
+
+        line-height: 1.8;
+
+        margin-bottom: 22px;
+    }
+
+
+    .message .highlight {
+        font-size: 20px;
+
+        line-height: 1.6;
+
+        margin-top: 35px;
+    }
+
+
+    /* The Man Behind Our Family */
+
+    .father-section {
+        padding: 90px 20px;
+    }
+
+
+    .father-section h2 {
+        font-size: 50px;
+
+        margin-bottom: 50px;
+    }
+
+
+    .father-story {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+
+    .story-photo {
+        width: calc(100% - 15px);
+
+        margin: 0 auto;
+    }
+
+
+    .story-photo::before {
+        inset: -8px;
+    }
+
+
+    .story-text {
+        max-width: 100%;
+    }
+
+
+    .story-text p {
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    .story-text .story-highlight {
+        font-size: 21px;
+
+        line-height: 1.6;
+    }
+        /* Family Memories */
+
+    .memories-section {
+        padding: 90px 20px;
+    }
+
+
+    .memories-section h2 {
+        font-size: 50px;
+
+        margin-bottom: 80px;
+    }
+
+
+    .memory {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 45px;
+
+        margin-bottom: 110px;
+    }
+
+
+    .memory:nth-child(even) {
+        display: flex;
+
+        flex-direction: column;
+    }
+
+
+    .memory:nth-child(even) .memory-image {
+        order: 1;
+    }
+
+
+    .memory:nth-child(even) .memory-text {
+        order: 2;
+    }
+
+
+    .memory-image {
+        width: calc(100% - 15px);
+
+        margin: auto;
+    }
+
+
+    .memory-image::before {
+        inset: -8px;
+    }
+
+
+    .memory-text h3 {
+        font-size: 34px;
+
+        margin: 15px 0 20px;
+    }
+
+
+    .memory-text p {
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+        /* Mobile cinematic animation */
+
+    .memory-image {
+        transform: translateY(30px);
+    }
+
+
+    .memory-text {
+        transform: translateY(25px);
+    }
+        /* Letter */
+
+    .letter-section {
+        padding: 90px 20px;
+    }
+
+
+    .letter-section h2 {
+        font-size: 50px;
+
+        margin-bottom: 55px;
+    }
+
+
+    .letter {
+        padding: 35px 20px;
+
+        border-left: 1px solid #8c755d;
+        border-right: 1px solid #8c755d;
+    }
+
+
+    .letter p {
+        font-size: 16px;
+
+        line-height: 1.9;
+
+        margin-bottom: 24px;
+    }
+
+
+    .letter .letter-greeting {
+        font-size: 22px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .letter .letter-highlight {
+        font-size: 21px;
+
+        line-height: 1.7;
+
+        margin-top: 40px;
+
+        margin-bottom: 40px;
+    }
+
+
+    .letter .letter-signature {
+        font-size: 21px;
+    }
+        /* Music Player */
+
+    .music-player {
+        right: 15px;
+
+        bottom: 15px;
+
+        padding: 8px 12px 8px 8px;
+
+        gap: 9px;
+    }
+
+
+    #musicButton {
+        width: 35px;
+        height: 35px;
+
+        font-size: 12px;
+    }
+
+
+    .music-title {
+        font-size: 11px;
+    }
+
+
+    .music-status {
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .music-icon {
+        font-size: 17px;
+    }
+}
+/* =========================
+   FAMILY MEMORIES
+========================= */
+
+.memories-section {
+    background: #f1ebe3;
+
+    padding: 130px 30px;
+
+    color: #302a25;
+}
+
+
+.memories-container {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   MEMORY TITLE
+========================= */
+
+.memories-section h2 {
+    font-size: clamp(55px, 8vw, 90px);
+
+    line-height: 1;
+
+    margin-bottom: 120px;
+}
+
+
+/* =========================
+   MEMORY ITEM
+========================= */
+
+.memory {
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    margin-bottom: 180px;
+}
+
+
+/* Alternating Layout */
+
+.memory:nth-child(even) {
+    grid-template-columns: 0.8fr 1.2fr;
+}
+
+
+.memory:nth-child(even) .memory-image {
+    order: 2;
+}
+
+
+.memory:nth-child(even) .memory-text {
+    order: 1;
+}
+
+
+/* =========================
+   MEMORY IMAGE
+========================= */
+
+.memory-image {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.memory-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -12px;
+
+    border: 1px solid #b49a7b;
+}
+
+
+.memory-image img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    position: relative;
+
+    z-index: 1;
+
+    filter: saturate(0.85);
+
+    transition: transform 0.5s ease;
+}
+
+
+.memory-image:hover img {
+    transform: scale(1.02);
+}
+
+
+/* =========================
+   MEMORY TEXT
+========================= */
+
+.memory-text span {
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #9b7e5b;
+}
+
+
+.memory-text h3 {
+    font-size: 42px;
+
+    font-weight: normal;
+
+    line-height: 1.1;
+
+    margin: 20px 0 25px;
+}
+
+
+.memory-text p {
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #62564d;
+
+    max-width: 450px;
+}
+/* =========================
+   CINEMATIC SCROLL ANIMATION
+========================= */
+
+.memory-image,
+.memory-text {
+    opacity: 0;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* Image comes from below */
+
+.memory-image {
+    transform: translateY(50px);
+}
+
+
+/* Text comes from the opposite direction */
+
+.memory-text {
+    transform: translateY(35px);
+}
+
+
+/* Active state */
+
+.memory.show .memory-image,
+.memory.show .memory-text {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* Slight delay for text */
+
+.memory.show .memory-text {
+    transition-delay: 0.2s;
+}
+/* =========================
+   A LETTER TO DAD
+========================= */
+
+.letter-section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 140px 30px;
+
+    background: #302a25;
+
+    color: #f1ebe3;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Subtle background decoration */
+
+.letter-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(180, 154, 123, 0.15);
+
+    border-radius: 50%;
+
+    top: -250px;
+    right: -200px;
+}
+
+
+.letter-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border: 1px solid rgba(180, 154, 123, 0.1);
+
+    border-radius: 50%;
+
+    bottom: -200px;
+    left: -150px;
+}
+
+
+/* Container */
+
+.letter-container {
+    width: 100%;
+
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* Title */
+
+.letter-section .section-label {
+    color: #b49a7b;
+
+    margin-bottom: 25px;
+}
+
+
+.letter-section h2 {
+    font-size: clamp(55px, 8vw, 90px);
+
+    line-height: 1;
+
+    color: #f1ebe3;
+
+    margin-bottom: 80px;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    max-width: 720px;
+
+    margin: auto;
+
+    padding: 60px;
+
+    border-left: 1px solid #8c755d;
+
+    border-right: 1px solid #8c755d;
+}
+
+
+.letter p {
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #cfc5bb;
+
+    margin-bottom: 28px;
+}
+
+
+/* Greeting */
+
+.letter .letter-greeting {
+    font-size: 25px;
+
+    color: #f1ebe3;
+
+    margin-bottom: 40px;
+}
+
+
+/* Highlight */
+
+.letter .letter-highlight {
+    font-size: 24px;
+
+    line-height: 1.7;
+
+    color: #f1ebe3;
+
+    margin-top: 50px;
+
+    margin-bottom: 50px;
+}
+
+
+/* Signature */
+
+.letter .letter-signature {
+    font-family: Georgia, 'Times New Roman', serif;
+
+    font-size: 24px;
+
+    font-style: italic;
+
+    color: #b49a7b;
+
+    margin-top: 10px;
+}
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-player {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 16px 10px 10px;
+
+    background: rgba(48, 42, 37, 0.95);
+
+    border: 1px solid rgba(180, 154, 123, 0.5);
+
+    border-radius: 50px;
+
+    color: #f1ebe3;
+
+    z-index: 999;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.music-player:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Music Button */
+
+#musicButton {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #b49a7b;
+
+    color: #302a25;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+#musicButton:hover {
+    transform: scale(1.08);
+}
+
+
+/* Music Information */
+
+.music-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.music-title {
+    font-family: Georgia, 'Times New Roman', serif;
+
+    font-size: 13px;
+
+    color: #f1ebe3;
+}
+
+
+.music-status {
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #b49a7b;
+}
+
+
+/* Music Icon */
+
+.music-icon {
+    font-size: 20px;
+
+    color: #b49a7b;
+
+    margin-left: 5px;
+}
