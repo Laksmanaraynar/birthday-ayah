@@ -5,6 +5,23 @@ const fatherSection = document.getElementById("fatherSection");
 
 
 /* =========================
+   BACKGROUND MUSIC
+========================= */
+
+const backgroundMusic = new Audio(
+    "assets/music/birthday-song.MP3"
+);
+
+backgroundMusic.loop = true;
+backgroundMusic.volume = 0.7;
+
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
+
+let isPlaying = false;
+
+
+/* =========================
    OPEN BIRTHDAY PAGE
 ========================= */
 
@@ -20,9 +37,13 @@ openButton.addEventListener("click", function () {
 
             isPlaying = true;
 
-            musicButton.textContent = "Ⅱ";
+            if (musicButton) {
+                musicButton.textContent = "Ⅱ";
+            }
 
-            musicStatus.textContent = "NOW PLAYING";
+            if (musicStatus) {
+                musicStatus.textContent = "NOW PLAYING";
+            }
 
         })
         .catch(function (error) {
@@ -44,6 +65,53 @@ openButton.addEventListener("click", function () {
     }, 700);
 
 });
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+if (musicButton) {
+
+    musicButton.addEventListener("click", function () {
+
+        if (!isPlaying) {
+
+            backgroundMusic.play()
+                .then(function () {
+
+                    musicButton.textContent = "Ⅱ";
+
+                    if (musicStatus) {
+                        musicStatus.textContent = "NOW PLAYING";
+                    }
+
+                    isPlaying = true;
+
+                })
+                .catch(function (error) {
+
+                    console.log("Music could not start:", error);
+
+                });
+
+        } else {
+
+            backgroundMusic.pause();
+
+            musicButton.textContent = "▶";
+
+            if (musicStatus) {
+                musicStatus.textContent = "PLAY MUSIC";
+            }
+
+            isPlaying = false;
+
+        }
+
+    });
+
+}
 
 
 /* =========================
@@ -111,6 +179,8 @@ memories.forEach(function (memory) {
     memoryObserver.observe(memory);
 
 });
+
+
 /* =========================
    LETTER ANIMATION
 ========================= */
@@ -142,40 +212,3 @@ const letterObserver = new IntersectionObserver(
 
 
 letterObserver.observe(letterSection);
-/* =========================
-   BACKGROUND MUSIC
-========================= */
-
-const musicButton = document.getElementById("musicButton");
-const backgroundMusic = document.getElementById("backgroundMusic");
-const musicStatus = document.getElementById("musicStatus");
-
-
-let isPlaying = false;
-
-
-musicButton.addEventListener("click", function () {
-
-    if (!isPlaying) {
-
-        backgroundMusic.play();
-
-        musicButton.textContent = "Ⅱ";
-
-        musicStatus.textContent = "NOW PLAYING";
-
-        isPlaying = true;
-
-    } else {
-
-        backgroundMusic.pause();
-
-        musicButton.textContent = "▶";
-
-        musicStatus.textContent = "PLAY MUSIC";
-
-        isPlaying = false;
-
-    }
-
-});
